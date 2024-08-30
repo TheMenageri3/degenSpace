@@ -4,7 +4,7 @@ export default function P(props: React.HTMLProps<HTMLHeadingElement>) {
   return (
     <p
       {...props}
-      className={cn("text-sm  text-primary w-fit", props.className)}
+      className={cn("text-md  text-primary w-fit", props.className)}
     />
   );
 }
