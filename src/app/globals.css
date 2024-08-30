@@ -57,7 +57,7 @@
     @apply bg-background text-foreground;
     background-image: url("/noice.svg");
     background-repeat: repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
   }
 }
