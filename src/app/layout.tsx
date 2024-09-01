@@ -23,8 +23,8 @@ export default function RootLayout({
         className={`${inter.className} min-w-[350px] md:mx-[150px]  mx-[10px]`}
       >
         <UIProvider>
-          <div className="flex flex-col gap-[2px]">
-            <TopBar />
+          <div className="flex flex-col gap-[2px] h-screen">
+            {/* <TopBar /> */}
             <View>{children}</View>
           </div>
         </UIProvider>
