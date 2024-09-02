@@ -1,5 +1,3 @@
-"use client";
-
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import React from "react";
@@ -50,7 +48,7 @@ export const Wallet = () => {
           <>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div className="flex flex-row gap-2 items-center border-2 border-primary p-[8px] rounded cursor-pointer">
+                <div className="flex flex-row gap-2 items-center border-2 border-border p-[8px] rounded cursor-pointer hover:bg-backgroundHover">
                   <Image
                     alt={wallet.adapter.name}
                     height={24}
