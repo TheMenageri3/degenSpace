@@ -1,23 +1,23 @@
+import { flicks } from "@/components/Flick/dummyData";
 import { Flick } from "@/components/Flick/Flick";
 import H1 from "@/components/H1";
-import P from "@/components/P";
+
+import { MainContentHeader } from "@/components/MainLayout/MainContentHeader";
 import { HorizontalLine } from "@/components/UtilComponents/Horizontalline";
 
-export default function MainContent() {
+export default function Home() {
   return (
-    <div className="w-full flex flex-col jjustify-start items-center gap-[10px] border-r-[3px] border-border border-l-[3px]">
-      <div className="flex flex-col w-full items-center mt-[50px]">
-        <div className="p-[8px] my-[10px]">
-          <H1>A social community space for degens on solana</H1>
-        </div>
-        <HorizontalLine />
-        <div className="flex flex-col my-[30px] items-start w-full">
+    <div className="flex flex-col h-full w-full gap-[10px] backdrop-blur-sm">
+      <div className="my-[10px]">
+        <MainContentHeader displaytext="A social community space for degens on solana" />
+        <div className="flex flex-col items-start w-full">
           <div className="p-[10px] w-full items-start">
-            <P className="font-bold text-lg">Trending Flicks</P>
+            <H1>Trending Flicks</H1>
           </div>
+          <HorizontalLine />
           <div className="flex flex-col w-full">
-            {[1, 2, 3, 4, 5].map((_, i) => (
-              <Flick key={i} />
+            {flicks.map((flick) => (
+              <Flick key={flick.username} {...flick} />
             ))}
           </div>
         </div>
