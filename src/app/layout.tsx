@@ -20,11 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-w-[350px] md:mx-[150px]  mx-[10px]`}
+        className={`${inter.className} min-w-[350px] md:mx-[150px] mx-[10px] overflow-hidden `}
       >
         <UIProvider>
           <div className="flex flex-col gap-[2px] h-screen">
-            {/* <TopBar /> */}
             <View>{children}</View>
           </div>
         </UIProvider>
