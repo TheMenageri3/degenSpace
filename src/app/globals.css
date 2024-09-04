@@ -5,7 +5,6 @@
 @layer base {
   :root {
     --background: 343 0% 2%;
-    --background-hover: 191 50% 30%;
     --foreground: 343 28% 98%;
     --muted: 257 0% 9%;
     --muted-foreground: 340 0.44% 35.6%;
