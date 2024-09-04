@@ -40,6 +40,7 @@ export const FlickActions = () => {
           key={act.name}
           iconPath={act.iconPath}
           meta={act.count}
+          hoverName={act.name}
           onClick={() => {}}
         />
       ))}
