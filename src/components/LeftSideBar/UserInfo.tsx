@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import P from "../P";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Image from "next/image";
@@ -15,7 +15,19 @@ export const UserInfo = () => {
     username: "johndoe",
   });
 
-  //fetch from DB
+
+  //fetch from DB?
+
+  useEffect(() => {
+    const userInfo = JSON.parse(window.localStorage.getItem('userInfo') as string);
+
+    const user: UserData = {
+      displayName: userInfo.dashboardName,
+      username: userInfo.username,
+    }
+
+    setUserData(user)
+  }, [connected])
 
   if (!connected) return null;
 

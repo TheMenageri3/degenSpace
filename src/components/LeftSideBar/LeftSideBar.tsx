@@ -2,6 +2,7 @@
 import { Logo } from "../Logo";
 import { Button } from "../ui/button";
 import { JobBoard } from "./JobBoard";
+import { Messages } from "./Messages";
 import { Search } from "./Search";
 import { UserInfo } from "./UserInfo";
 import { Wallet } from "./Wallet";
@@ -15,6 +16,7 @@ export const LeftSideBar = () => {
         <UserInfo />
         <Search />
         <JobBoard />
+        <Messages />
       </div>
     </div>
   );
