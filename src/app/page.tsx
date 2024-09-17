@@ -8,12 +8,12 @@ import { HorizontalLine } from "@/components/UtilComponents/Horizontalline";
 export default function Home() {
   return (
     <div className="flex flex-col h-full w-full gap-[10px] backdrop-blur-sm">
-      <div className="my-[10px]">
+      <div>
         <MainContentHeader displaytext="A social community space for degens on solana" />
-        <div className="flex flex-col items-start w-full">
-          <div className="p-[10px] w-full items-start">
-            <H1>Trending Flicks</H1>
-          </div>
+        <div className="flex p-[10px] w-full justify-center p-[10px]">
+          <H1>Trending Flicks</H1>
+        </div>
+        <div className="flex flex-col w-full">
           <HorizontalLine />
           <div className="flex flex-col w-full">
             {flicks.map((flick) => (

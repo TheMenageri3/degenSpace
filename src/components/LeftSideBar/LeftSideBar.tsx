@@ -1,6 +1,5 @@
 "use client";
 import { Logo } from "../Logo";
-import { Button } from "../ui/button";
 import { JobBoard } from "./JobBoard";
 import { Search } from "./Search";
 import { UserInfo } from "./UserInfo";

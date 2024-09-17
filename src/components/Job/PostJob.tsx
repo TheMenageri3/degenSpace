@@ -8,8 +8,14 @@ import { DialogContent } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
+import { DialogTitle } from "../ui/dialog";
 
 const PostJobInputs = [
+  {
+    label: "Company Name",
+    id: "companyName",
+    placeholder: "Company Name",
+  },
   {
     label: "Job Title",
     id: "jobTitle",
@@ -35,24 +41,20 @@ const PostJobInputs = [
     id: "compensation",
     placeholder: "Compensation & Benefits",
   },
-  {
-    label: "Application Deadline",
-    id: "applicationDeadline",
-    placeholder: "Application Deadline",
-  },
 ];
 
 export const PostJob = () => {
   return (
     <React.Fragment>
-      <div className="w-full flex flex-col items-center p-[10px] gap-[10px]">
+      <div className="w-full flex flex-col items-center p-[12px] gap-[10px]">
         <P className="font-bold">Looking to Hire CHADS on solana...?</P>
         <PostJobModal />
       </div>
       <HorizontalLine />
-      <div className="flex flex-col gap-[10px] w-full items-start p-[10px]">
+      <div className="flex flex-col gap-[10px] w-full items-center p-[10px]">
         <H1 className="font-bold">Trending Jobs</H1>
       </div>
+      <HorizontalLine />
     </React.Fragment>
   );
 };
@@ -64,8 +66,8 @@ const PostJobModal = () => {
         <Button>Post a Job</Button>
       </DialogTrigger>
       <DialogContent>
+        <DialogTitle>Post a Job</DialogTitle>
         <div className="flex flex-col gap-[10px] w-full items-start">
-          <P className="font-bold text-[20px]">Post a Job</P>
           <div className="flex flex-col w-3/4 p-4 gap-[15px]">
             {PostJobInputs.map((input) =>
               input.id === "jobDescription" ? (

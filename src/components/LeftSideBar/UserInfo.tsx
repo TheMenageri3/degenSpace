@@ -2,6 +2,7 @@ import { useState } from "react";
 import P from "../P";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type UserData = {
   displayName: string;
@@ -17,10 +18,19 @@ export const UserInfo = () => {
 
   //fetch from DB
 
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/Profile");
+  };
+
   if (!connected) return null;
 
   return (
-    <div className="flex flex-col gap-[5px] rounded items-start py-[10px] px-[15px] cursor-pointer hover:bg-backgroundHover">
+    <div
+      className="flex flex-col gap-[5px] rounded items-start py-[10px] px-[15px] cursor-pointer hover:bg-backgroundHover"
+      onClick={handleClick}
+    >
       <div className="flex flex-row items-center gap-[10px]">
         <Image src={"/user.svg"} alt="logo" height={30} width={30} />
         <div className="flex flex-col gap-[3px]">
