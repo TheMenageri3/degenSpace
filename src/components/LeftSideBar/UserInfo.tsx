@@ -22,7 +22,7 @@ export const UserInfo = () => {
     const userInfo = JSON.parse(window.localStorage.getItem('userInfo') as string);
 
     const user: UserData = {
-      displayName: userInfo.dashboardName,
+      displayName: userInfo.displayName,
       username: userInfo.username,
     }
 
