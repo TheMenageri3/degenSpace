@@ -1,6 +1,9 @@
 import Image from "next/image";
 import P from "../P";
 import { HorizontalLine } from "../UtilComponents/Horizontalline";
+import { minimizePubkey } from "@/lib/utils/helpers";
+import { Pubkey } from "../UtilComponents/Pubkey";
+import { Badge } from "../ui/badge";
 
 type Role =
   | "Dev"
@@ -16,7 +19,7 @@ type Badge = {
 };
 
 type Wallet = {
-  walletAddress: string;
+  primary: string;
   additional_wallets: string[];
 };
 
@@ -24,6 +27,12 @@ type ExternalProfile = {
   name: string;
   username: string;
   url: string;
+};
+
+type Reputation = {
+  name: "dev" | "social" | "content";
+  derivedFrom: string;
+  score: number;
 };
 
 type Profile = {
@@ -37,10 +46,10 @@ type Profile = {
   role: Role;
   externalProfiles: ExternalProfile[];
   email?: string;
-  reputation: number;
+  reputation: Reputation[];
   badges: Badge[];
   followers: number;
-  wallets: Wallet[];
+  wallet: Wallet;
   metadata: Record<string, any>;
 };
 
@@ -50,27 +59,38 @@ const profileLogoMap = {
 };
 
 const dummyProfile: Profile = {
-  profilePic: "/user.svg",
-  userName: "solana_dev",
-  displayName: "Solana Dev",
+  profilePic: "/sample_profile.svg",
+  userName: "aeyakovenko",
+  displayName: "Anatoly Yakovenko",
   userId: "123e4567-e89b-12d3-a456-426614174000",
   profileDescription: "Building decentralized applications on Solana.",
-  profileMetadata: { twitter: "https://twitter.com/solana_dev" },
+  profileMetadata: { twitter: "https://twitter.com/aeyakovenko" },
   role: "Dev",
   externalProfiles: [
     {
       name: "Twitter",
-      username: "soalan_dev",
-      url: "https://twitter.com/solana_dev",
+      username: "aeyakovenko",
+      url: "https://twitter.com/aeyakovenko",
     },
     {
       name: "GitHub",
-      username: "soalan_dev_git",
-      url: "https://github.com/soalan_dev",
+      username: "aeyakovenko",
+      url: "https://github.com/https://github.com/aeyakovenko",
     },
   ],
   email: "solana_dev@gmail.com",
-  reputation: 50,
+  reputation: [
+    {
+      name: "dev",
+      derivedFrom: "GitHub",
+      score: 90,
+    },
+    {
+      name: "social",
+      derivedFrom: "Twitter",
+      score: 80,
+    },
+  ],
   badges: [
     {
       badgeName: "Top Developer",
@@ -78,12 +98,10 @@ const dummyProfile: Profile = {
     },
   ],
   followers: 15000,
-  wallets: [
-    {
-      walletAddress: "5YQy98Wv2ULZiKnH1Tkh3VxWw8wAEcHKHV4s7sXftuLL",
-      additional_wallets: ["5YQy98Wv2ULZiKnH1Tkh3VxWw8wAEcHKHV4s7sXftuLL"],
-    },
-  ],
+  wallet: {
+    primary: "5YQy98Wv2ULZiKnH1Tkh3VxWw8wAEcHKHV4s7sXftuLL",
+    additional_wallets: ["5YQy98Wv2ULZiKnH1Tkh3VxWw8wAEcHKHV4s7sXftuLL"],
+  },
   metadata: { customField: "Some custom value" },
 };
 
@@ -93,7 +111,7 @@ export const ProfilePage = () => {
       <div className="flex flex-row gap-[10px] w-full items-start p-[10px]">
         <div className="flex flex-col gap-[10px] w-full">
           <div className="flex flex-col gap-[5px] items-start w-full">
-            <div className="flex w-full h-[100px] items-center justify-center border border-[2px] border-border">
+            <div className="flex w-full h-[100px] items-center justify-center border border-[2px] border-border backdrop-blur-sm">
               <Image
                 src={dummyProfile.profilePic}
                 alt="profile-pic"
@@ -110,6 +128,9 @@ export const ProfilePage = () => {
                 @{dummyProfile.userName}
               </P>
             </div>
+            <div className="flex flex-row items-center gap-[5px]">
+              <Pubkey pubkey={dummyProfile.wallet.primary} />
+            </div>
           </div>
           <div className="flex gap-[10px]">
             <P className="text-[15px] font-bold">
@@ -117,41 +138,41 @@ export const ProfilePage = () => {
             </P>
           </div>
           <div className="flex gap-[10px]">
-            <P className="text-[18px] font-bold">
-              <span className="text-primary font-bold">Reputation:</span>{" "}
-              {dummyProfile.reputation}
-            </P>
+            <P className="text-primary font-bold">Reputation:</P>{" "}
+            {dummyProfile.reputation.map((reputation) => (
+              <P className="text-[16px] font-bold" key={reputation.name}>
+                {reputation.name}: {reputation.score}
+              </P>
+            ))}
           </div>
           <div className="flex gap-[10px]">
-            <P className="text-[18px] font-bold">
+            <P className="text-[16px] font-bold">
               <span className="text-primary font-bold">Followers:</span>{" "}
               {dummyProfile.followers}
             </P>
           </div>
           <div className="flex gap-[10px]">
-            <P className="text-[18px] font-bold">
-              <span className="text-primary font-bold">Badges:</span>{" "}
-              {dummyProfile.badges.map((badge) => badge.badgeName).join(", ")}
-            </P>
+            <P className="text-primary font-bold">Badges:</P>{" "}
+            {dummyProfile.badges.map((badge) => (
+              <Badge key={badge.badgeName}>{badge.badgeName}</Badge>
+            ))}
           </div>
           <div className="flex flex-row gap-[10px]">
-            <span className="text-primary font-bold">Wallets:</span>
+            <P className="text-primary font-bold">Secondary Wallets:</P>
             <div className="flex flex-row gap-[10px]">
-              <span className="font-bold text-[18px]">[</span>
-              <P className="text-[18px] font-bold">
-                {dummyProfile.wallets
-                  .map((wallet) => wallet.walletAddress)
-                  .join(", ")}
-              </P>
-              <span className="font-bold text-[18px]">]</span>
+              <P className="font-bold text-[20px]">[</P>
+              {dummyProfile.wallet.additional_wallets.map((wallet) => (
+                <Pubkey key={wallet} pubkey={wallet} />
+              ))}
+              <P className="font-bold text-[20px]">]</P>
             </div>
           </div>
           <div className="flex flex-row gap-[10px]">
-            <P className="text-[18px] text-primary font-bold">
+            <P className="text-[16px] text-primary font-bold">
               External Profiles:
             </P>
             <div className="flex flex-row gap-[10px]">
-              <span className="font-bold text-[18px]">[</span>
+              <P className="font-bold text-[20px]">[</P>
               {dummyProfile.externalProfiles.map((profile) => (
                 <div className="flex flex-row" key={profile.name}>
                   <div className="flex flex-row gap-[5px] items-center">
@@ -178,10 +199,10 @@ export const ProfilePage = () => {
                       </P>
                     </a>
                   </div>
-                  <span className="font-bold">, </span>
+                  <P className="font-bold">, </P>
                 </div>
               ))}
-              <span className="font-bold text-[18px]">]</span>
+              <P className="font-bold text-[20px]">]</P>
             </div>
           </div>
         </div>

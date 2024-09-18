@@ -6,28 +6,34 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export const IconButton = ({
   iconPath,
-  meta,
   onClick,
   hoverName,
+  meta,
 }: {
   iconPath: string;
   onClick: () => void;
-  meta: number;
   hoverName: string;
+  meta?: any;
 }) => {
   return (
     <React.Fragment>
       <Tooltip>
         <TooltipTrigger>
-          <div className="flex hover:bg-backgroundHover p-[10px] rounded-full cursor-pointer flex-row gap-[4px] items-center">
+          <div
+            className={
+              meta
+                ? "flex hover:bg-backgroundHover rounded-full cursor-pointer p-[10px] flex-row gap-[3px] items-center"
+                : "flex hover:bg-backgroundHover rounded-full cursor-pointer p-[3px] flex-row gap-[3px] items-center"
+            }
+          >
             <Image
               src={iconPath}
               alt="img"
-              height={24}
-              width={24}
+              height={20}
+              width={20}
               onClick={onClick}
             />
-            <P className="font-bold text-[14px]">{meta}</P>
+            {meta && <P className="text-[13px] font-bold">{meta}</P>}
           </div>
         </TooltipTrigger>
         <TooltipContent side="top" align="center">

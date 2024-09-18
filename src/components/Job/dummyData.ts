@@ -9,6 +9,8 @@ export const jobsData: JobData[] = [
     skills: "Rust, Solana, Web3, Anchor, Git",
     compensation: "Competitive salary + equity options",
     companyName: "SolanaLabs",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Web3 Full-Stack Engineer",
@@ -18,6 +20,8 @@ export const jobsData: JobData[] = [
     skills: "React, TypeScript, Solana, Rust, Node.js",
     compensation: "Base salary with bonus + remote work flexibility",
     companyName: "ChainBuilders",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Smart Contract Auditor",
@@ -27,6 +31,8 @@ export const jobsData: JobData[] = [
     skills: "Rust, Solana, Smart Contracts, Security Auditing",
     compensation: "Hourly rate based on experience",
     companyName: "SecureChain",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "DeFi Engineer",
@@ -36,6 +42,8 @@ export const jobsData: JobData[] = [
     skills: "Solana, DeFi, Rust, Blockchain, Web3",
     compensation: "Equity + performance-based bonuses",
     companyName: "DeFiNation",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Solana Developer Advocate",
@@ -45,6 +53,8 @@ export const jobsData: JobData[] = [
     skills: "Public Speaking, Solana, Rust, Content Creation, Web3",
     compensation: "Competitive salary + travel allowances",
     companyName: "Solana Foundation",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Frontend Engineer - Web3",
@@ -54,6 +64,8 @@ export const jobsData: JobData[] = [
     skills: "React, TypeScript, Web3, Solana, UX/UI Design",
     compensation: "Salary + health benefits",
     companyName: "dAppVision",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "DAO Governance Lead",
@@ -63,6 +75,8 @@ export const jobsData: JobData[] = [
     skills: "Solana, Governance, DAOs, Rust, Smart Contracts",
     compensation: "Token-based incentives + bonus",
     companyName: "DAO Masters",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Solana NFT Marketplace Developer",
@@ -72,6 +86,8 @@ export const jobsData: JobData[] = [
     skills: "Solana, NFTs, Rust, JavaScript, Web3",
     compensation: "Salary + equity in NFT projects",
     companyName: "NFTForge",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Backend Engineer - Solana dApps",
@@ -81,6 +97,8 @@ export const jobsData: JobData[] = [
     skills: "Rust, Solana, Backend Development, Web3, Databases",
     compensation: "Base salary + annual bonuses",
     companyName: "SolanaEdge",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
   {
     jobTitle: "Web3 Game Developer",
@@ -90,5 +108,7 @@ export const jobsData: JobData[] = [
     skills: "Rust, Solana, Game Development, Unity, Web3",
     compensation: "Competitive salary + token incentives",
     companyName: "GameChain Studios",
+    longDescription:
+      "As a Solana Blockchain Developer, you will be responsible for designing, developing, and maintaining smart contracts on the Solana blockchain. You will work closely with the engineering team to integrate smart contracts with decentralized applications (dApps). You will be responsible for testing and deploying contracts using Rust and Anchor, ensuring security and efficiency. You will also contribute to the development of new blockchain features and tools. Experience with Web3 and Git is a must, as you'll be working in a fast-paced, collaborative environment.",
   },
 ];

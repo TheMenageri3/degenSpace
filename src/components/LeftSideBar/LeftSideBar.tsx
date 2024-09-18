@@ -2,7 +2,7 @@
 import { Logo } from "../Logo";
 import { JobBoard } from "./JobBoard";
 import { Search } from "./Search";
-import { UserInfo } from "./UserInfo";
+import { ProfileInfo } from "./ProfileInfo";
 import { Wallet } from "./Wallet";
 
 export const LeftSideBar = () => {
@@ -11,7 +11,7 @@ export const LeftSideBar = () => {
       <div className="mt-[20px] flex flex-col gap-[10px] w-full h-full items-start">
         <Logo />
         <Wallet />
-        <UserInfo />
+        <ProfileInfo />
         <Search />
         <JobBoard />
       </div>
