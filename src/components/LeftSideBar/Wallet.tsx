@@ -39,7 +39,7 @@ export const Wallet = () => {
   };
 
   return (
-    <>
+    <div className="hover:bg-backgroundHover rounded  cursor-pointer p-[10px]">
       {!connected ? (
         <Button onClick={handleConnect}>Connect Wallet</Button>
       ) : (
@@ -48,7 +48,7 @@ export const Wallet = () => {
           <>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div className="flex flex-row gap-2 items-center border-2 border-border p-[8px] rounded cursor-pointer hover:bg-backgroundHover">
+                <div className="flex flex-row gap-2 items-center border-2 border-border p-[8px] rounded ">
                   <Image
                     alt={wallet.adapter.name}
                     height={24}
@@ -76,6 +76,6 @@ export const Wallet = () => {
           </>
         )
       )}
-    </>
+    </div>
   );
 };
